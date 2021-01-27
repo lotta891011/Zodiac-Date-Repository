@@ -1,0 +1,97 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Zodiac date main page</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Zodiac date</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>New type of date app!</h1>
+        <p>This is a dating app which uses zodiac signs to connect people.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Start here!</h2>
+            <p>Here you can join.
+            <ul>
+                <li><a href="#" th:href="@{'/user/new'}" style="margin-right: 5px;">Join</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h2>Hobbies</h2>
+            <p>Hobbies you love!</p>
+            <ul>
+                <li><a href="#" th:href="@{'/hobbies/list'}" style="margin-right: 5px;">List</a> of all hobbies we know</li>
+                <li><a href="#" th:href="@{'/hobby/new'}" style="margin-right: 5px;">Add new</a> hobby</li>
+            </ul>
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/hobbies/'}" >All Hobbies &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Location</h2>
+            <p>Make us know your location.</p>
+            <ul>
+                <li><a href="#" th:href="@{'/location/list'}" style="margin-right: 5px;">List</a> all locations</li>
+                <li><a href="#" th:href="@{'/location/new'}" style="margin-right: 5px;">Add new</a>location</li>
+            </ul>
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/locations/'}" >All Locations &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Zodiac</h2>
+            <p>Help us go 12!</p>
+            <ul>
+                <li><a href="#" th:href="@{'/zodiacs'}" style="margin-right: 5px;">List</a> all zodiacs</li>
+                <li><a href="#" th:href="@{'/zodiac/new'}" style="margin-right: 5px;">Add new</a> zodiac</li>
+            </ul>
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/zodiacs/'}" >All Zodiacs &raquo;</a></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2021, Karolina Machalica</p>
+    </footer>
+</div> <!-- /container -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of users</title>
+</head>
+<body>
+<h1>Users</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    <!--/*@thymesVar id="user" type="com.zodiac.zodiacdate.commands.UserCommand"*/-->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}" style="margin-right: 5px;" >1</td>
+        <td th:text="${user.firstName}">Bob</td>
+        <td th:text="${user.lastName}">Puncake</td>
+        <td>
+            <a href="#" th:href="@{'/user/' + ${user.id} + '/show'}" style="margin-right: 5px;">Show</a>
+            <a href="#" th:href="@{'/user/' + ${user.id} + '/delete'}"style="margin-right: 5px;">Delete</a>
+            <a href="#" th:href="@{'/user/' + ${user.id} + '/edit'}" role="button" class="btn btn-success">Edit</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#" th:href="@{'/user/new'}" role="button" class="btn btn-success">Add</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

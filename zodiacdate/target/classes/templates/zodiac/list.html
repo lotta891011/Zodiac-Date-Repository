@@ -1,0 +1,37 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of zodiacs</title>
+</head>
+<body>
+<h1>Zodiacs</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Element</th>
+        <th>Quality</th>
+    </tr>
+    <!--/*@thymesVar id="zodiac" type="com.zodiac.zodiacdate.commands.ZodiacCommand"*/-->
+    <tr th:each="zodiac : ${zodiacs}">
+        <td th:text="${zodiac.id}" style="margin-right: 5px;" >1</td>
+        <td th:text="${zodiac.name}">Aquarius</td>
+        <td th:text="${zodiac.element}">Air</td>
+        <td th:text="${zodiac.quality}">Fixed</td>
+        <td>
+            <a href="#" th:href="@{'/zodiac/' + ${zodiac.id} + '/show'}" style="margin-right: 5px;">Show</a>
+            <a href="#" th:href="@{'/zodiac/' + ${zodiac.id} + '/delete'}"style="margin-right: 5px;">Delete</a>
+            <a href="#" th:href="@{'/zodiac/' + ${zodiac.id} + '/edit'}" role="button" class="btn btn-success">Edit</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#" th:href="@{'/zodiac/new'}" role="button" class="btn btn-success">Add</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

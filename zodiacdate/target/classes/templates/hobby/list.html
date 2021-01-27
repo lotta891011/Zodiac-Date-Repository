@@ -1,0 +1,35 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of hobbies</title>
+</head>
+<body>
+<h1>Hobbies</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+    </tr>
+    <!--/*@thymesVar id="hobby" type="com.zodiac.zodiacdate.commands.HobbyCommand"*/-->
+    <tr th:each="hobby : ${hobbies}">
+        <td th:text="${hobby.id}" style="margin-right: 5px;" >1</td>
+        <td th:text="${hobby.name}">Cooking</td>
+        <td th:text="${hobby.type}">At Home</td>
+        <td>
+            <a href="#" th:href="@{'/hobby/' + ${hobby.id} + '/show'}" style="margin-right: 5px;">Show</a>
+            <a href="#" th:href="@{'/hobby/' + ${hobby.id} + '/delete'}"style="margin-right: 5px;">Delete</a>
+            <a href="#" th:href="@{'/hobby/' + ${hobby.id} + '/edit'}" role="button" class="btn btn-success">Edit</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#" th:href="@{'/hobby/new'}" role="button" class="btn btn-success">Add</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

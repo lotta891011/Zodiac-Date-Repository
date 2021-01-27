@@ -1,0 +1,37 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of locations</title>
+</head>
+<body>
+<h1>Locations</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>State</th>
+    </tr>
+    <!--/*@thymesVar id="location" type="com.zodiac.zodiacdate.commands.LocationCommand"*/-->
+    <tr th:each="location : ${locations}">
+        <td th:text="${location.id}" style="margin-right: 5px;" >1</td>
+        <td th:text="${location.name}">Orlando</td>
+        <td th:text="${location.country}">USA</td>
+        <td th:text="${location.state}">Florida</td>
+        <td>
+            <a href="#" th:href="@{'/loaction/' + ${location.id} + '/show'}" style="margin-right: 5px;">Show</a>
+            <a href="#" th:href="@{'/location/' + ${location.id} + '/delete'}"style="margin-right: 5px;">Delete</a>
+            <a href="#" th:href="@{'/location/' + ${location.id} + '/edit'}" role="button" class="btn btn-success">Edit</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="#" th:href="@{'/location/new'}" role="button" class="btn btn-success">Add</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>
